@@ -108,7 +108,7 @@
                         <port>9999</port>
                     </httpConnector>
                     <stopKey>leidra</stopKey>
-                    <stopPort>1000</stopPort>
+                    <stopPort>9998</stopPort>
                 </configuration>
             </plugin>
             <plugin>

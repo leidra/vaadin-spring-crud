@@ -1,24 +1,28 @@
 package es.mhp.books.entities;
 
-import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
- * Created by afuentes on 26/01/16.
+ * Created by afuentes on 14/12/15.
  */
 @Entity
 @Table(name = "products")
-public class Product extends AbstractPersistable<Long> {
-    private String name;
-    private double price;
-    private Date creationDate;
+public class Product extends AbstractEntity {
+    @NotNull
+    @NotBlank
+    @Size(max = 50)
+    protected String name;
+    @NotNull
+    @NotBlank
+    @Size(max = 50)
+    protected String brand;
 
-    protected void setId(final Long id) {
-        super.setId(id);
-    }
+    protected User user;
 
     public String getName() {
         return name;
@@ -28,19 +32,19 @@ public class Product extends AbstractPersistable<Long> {
         this.name = name;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public double getPrice() {
-        return price;
+    public User getUser() {
+        return user;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -1,21 +1,26 @@
 package es.mhp.dtos;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class ProductDto extends AbstractDto {
+public class ProductListDto implements Dto {
+    private Long id;
     @NotNull
-    @NotBlank
     @Size(max = 50)
     protected String name;
     @NotNull
-    @NotBlank
     @Size(max = 50)
     protected String brand;
 
-    protected UserDto user;
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -33,11 +38,4 @@ public class ProductDto extends AbstractDto {
         this.brand = brand;
     }
 
-    public UserDto getUser() {
-        return user;
-    }
-
-    public void setUser(UserDto user) {
-        this.user = user;
-    }
 }

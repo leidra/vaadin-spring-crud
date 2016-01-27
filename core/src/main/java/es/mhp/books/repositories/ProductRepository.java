@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * Created by afuentes on 26/01/16.
  */
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends GenericRepository<Product> {
     Product findProductByName(String name);
 
-    @Query("Select p From Product p Where p.creationDate = :creationDate")
-    List<Product> findProductsByCreationDate(@Param("creationDate") Date creationDate);
+    @Query("Select p From Product p Where p.createdDate = :createdDate")
+    List<Product> findProductsByCreationDate(@Param("createdDate") Date creationDate);
 }

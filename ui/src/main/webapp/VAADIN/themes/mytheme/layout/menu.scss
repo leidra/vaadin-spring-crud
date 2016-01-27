@@ -1,0 +1,9 @@
+@mixin view-menu {
+	.ui-menu {
+		width: 10%;
+		height: 100%;
+		.v-button {
+			margin-bottom: 1%;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+@mixin header {
+	.ui-header {
+		width: 100%;
+		height: 10%;
+	}
+}
+
+@mixin footer {
+	.ui-footer {
+		width: 100%;
+		height: 10%;
+	}
+}
