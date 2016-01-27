@@ -1,9 +1,8 @@
-package es.mhp.examples;
+package es.mhp.books;
 
 import com.vaadin.spring.server.SpringVaadinServlet;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.XmlWebApplicationContext;
 

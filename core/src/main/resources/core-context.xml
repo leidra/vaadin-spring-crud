@@ -6,8 +6,13 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.0.xsd
-        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd">
 
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <bean id="propertyPlaceHolderConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
     <!-- Configures the database connection. -->
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="${db.driver}"/>
@@ -41,7 +46,7 @@
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
-        <property name="packagesToScan" value="es.mhp.examples"/>
+        <property name="packagesToScan" value="es.mhp.books.entities"/>
         <property name="jpaProperties">
             <props>
                 <!--
@@ -85,7 +90,7 @@
 
     <!--<jpa:auditing auditor-aware-ref="auditingProvider" set-dates="true"/>-->
 
-    <context:component-scan base-package="net.petrikainulainen.spring.testmvc.controller"/>
+    <context:component-scan base-package="es.mhp.books"/>
 
-    <jpa:repositories base-package="es.mhp.examples.repositories"/>
+    <jpa:repositories base-package="es.mhp.books.repositories"/>
 </beans>

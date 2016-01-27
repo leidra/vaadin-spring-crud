@@ -1,6 +1,6 @@
-package es.mhp.examples.repositories;
+package es.mhp.books.repositories;
 
-import es.mhp.examples.entities.Product;
+import es.mhp.books.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,6 +14,6 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     Product findProductByName(String name);
 
-    @Query("Select p From Products p Where p.creationDate = :creationDate")
+    @Query("Select p From Product p Where p.creationDate = :creationDate")
     List<Product> findProductsByCreationDate(@Param("creationDate") Date creationDate);
 }

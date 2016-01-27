@@ -1,4 +1,4 @@
-package es.mhp.examples.entities;
+package es.mhp.books.entities;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
@@ -13,6 +13,7 @@ import java.util.Date;
 @Table(name = "products")
 public class Product extends AbstractPersistable<Long> {
     private String name;
+    private double price;
     private Date creationDate;
 
     protected void setId(final Long id) {
@@ -33,5 +34,13 @@ public class Product extends AbstractPersistable<Long> {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
