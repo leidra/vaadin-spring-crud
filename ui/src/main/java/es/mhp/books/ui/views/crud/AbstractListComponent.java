@@ -1,8 +1,6 @@
 package es.mhp.books.ui.views.crud;
 
-import com.vaadin.event.SelectionEvent;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Component;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.Grid;
 import es.mhp.dtos.Dto;

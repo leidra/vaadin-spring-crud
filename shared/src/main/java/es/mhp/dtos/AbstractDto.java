@@ -14,7 +14,7 @@ public class AbstractDto implements Dto {
 
     @Override
     public Long getId() {
-        return null;
+        return id;
     }
 
     public Date getCreatedDate() {

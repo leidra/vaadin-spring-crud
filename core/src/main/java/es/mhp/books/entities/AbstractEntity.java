@@ -12,7 +12,6 @@ import java.util.Date;
  * Created by afuentes on 28/12/15.
  */
 @MappedSuperclass
-//@EntityListeners(AuditingEntityListener.class)
 public class AbstractEntity extends AbstractPersistable<Long> {
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate

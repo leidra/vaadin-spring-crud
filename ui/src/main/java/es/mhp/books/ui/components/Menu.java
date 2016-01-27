@@ -16,7 +16,6 @@ import java.util.Map;
  * Created by afuentes on 9/01/16.
  */
 @SpringComponent
-//@Scope(WebApplicationContext.SCOPE_APPLICATION)
 @UIScope
 public class Menu extends CssLayout {
     protected Map<String, Runnable> datasource = new HashMap<>();
